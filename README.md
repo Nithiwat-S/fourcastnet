@@ -5,6 +5,9 @@ Downloading NSF NCAR Curated ECMWF Reanalysis 5 (ERA5) data via the Registry of 
 Process below.
 
 $ git clone https://github.com/Nithiwat-S/fourcastnet.git
+$ cd fourcastnet
 $ make venv
 $ source venv/bin/activate
+$ pip install -r requirements.txt
+ 
 
