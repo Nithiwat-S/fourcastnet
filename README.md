@@ -63,11 +63,13 @@ num_workers_train: from 8 to 1
 
 num_workers_valida: from 8 to 1
 
+#
 
 $ vim train_era5.py, change
 
 lr (learning rate): from 0.0005 to 0.000005
 
+#
 
 $ singularity shell --nv ../nvidia-modulus24-12.sif
 
@@ -75,11 +77,15 @@ Singularity> nvidia-smi
 
 Singularity> exit
 
+#
 
 $ singularity exec --nv --bind ../data:/data ../nvidia-modulus24-12.sif mpirun --allow-run-as-root -np 2 python train_era5.py
 
+#
 
 Outputs pytorch file (.pt) will be in the checkpoints/ folder.
+
+$ ls -alh checkpoints/
 
 rerun, delete all file in outputs directory.
 
