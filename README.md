@@ -29,13 +29,15 @@ $ python download.py, see data file in download_path.
 
 $ python format.py, see data file in write_path.
 
+$ mkdir -p data/train data/test data/stats
+
 $ mv h5 file from write_path to data/train and data/test.
 
-$ vi mean.py, change path = "/mnt/fcn/data/train" and np.save path.
+$ vi mean.py, change path = "/mnt/fcn/data/train" and np.save path to data/stats.
 
 $ python mean.py
 
-$ vi std.py, change path = "/mnt/fcn/data/train" and np.save path.
+$ vi std.py, change path = "/mnt/fcn/data/train" and np.save path to data/stats.
 
 $ python std.py
 
