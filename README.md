@@ -69,6 +69,10 @@ $ python std.py
 
 $ h5dump -H -A 0 2010.h5
 
+$ h5ls -v 2010.h5/params
+
+$ h5ls -d 2010.h5/params
+
 #=========================================================================
 
 $ singularity --version
