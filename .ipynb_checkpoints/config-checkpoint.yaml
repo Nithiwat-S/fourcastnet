@@ -1,0 +1,21 @@
+download_path: "/lustre-home/gpu/home/research/nithiwat-r/fourcastnet/era5_data_test/data-era5"
+write_path: "/lustre-home/gpu/home/research/nithiwat-r/fourcastnet/era5_data_test/data_processed"
+bucket_name: "nsf-ncar-era5"
+start_train_year: 2010
+end_train_year: 2010
+test_years: 
+  - 2011
+out_of_sample_years:
+  - 2012
+dt: 6
+pl_folder: "e5.oper.an.pl"
+sfc_folder: "e5.oper.an.sfc" 
+pl_params:
+  - "t"
+sfc_params:
+  - "10u"
+pressure_levels:
+  t:
+    - 100
+  u:
+    - 100
