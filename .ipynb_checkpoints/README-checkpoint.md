@@ -89,12 +89,17 @@ $ vi nvidia-physicsnemo-25-03.def
 $ singularity build nvidia-physicsnemo-25-03.sif nvidia-physicsnemo-25-03.def
 
 $ vi physicsnemo/examples/weather/fcn_afno/conf/config.yaml, change
+
 channels: from [0, 1, …, 19] to [0, 1] ;from Dataset
+
 max_epoch: from 80 to 10
+
 num_workers_train: from 8 to 1
+
 num_workers_valida: from 8 to 1
 
 $ vi physicsnemo/examples/weather/fcn_afno/train_era5.py, change
+
 lr (learning rate): from 0.0005 to 0.000005
 
 $ vi run_fcn_afno_1gpu1A100.sh, edit work directory
@@ -108,3 +113,18 @@ $ ls -alh checkpoints/
 rerun, delete all file in outputs directory.
 
 $ rm -rf outputs/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
