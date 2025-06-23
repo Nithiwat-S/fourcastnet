@@ -15,7 +15,7 @@ $ cd fourcastnet
 
 #=========================================================================
 
-$ python --version
+$ module load Anaconda3/2024.10_gcc-11.5.0
 
 $ python -m venv venv
 
