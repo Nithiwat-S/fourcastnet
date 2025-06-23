@@ -15,15 +15,15 @@ module purge
 module load apptainer/1.3.6_gcc-11.5.0
 
 cd /lustre-home/gpu/home/research/nithiwat-r/fourcastnet/fourcastnet
-rm -rf fcn_afno/outputs
-rm -rf fcn_afno/checkpoints
+rm -rf fcn_afno-24/outputs
+rm -rf fcn_afno-24/checkpoints
 
 which apptainer
 nvidia-smi
 
 # Run with Apptainer and bind needed paths
 srun apptainer exec --nv \
-  --bind $PWD/fcn_afno:/workspace \
+  --bind $PWD/fcn_afno-24:/workspace \
   --bind /lustre-home/gpu/home/research/nithiwat-r/fourcastnet/data:/data \
   /lustre-home/gpu/home/research/nithiwat-r/fourcastnet/nvidia-modulus-24-12.sif \
   bash -c "cd /workspace && python train_era5.py"
