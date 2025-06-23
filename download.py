@@ -35,7 +35,7 @@ def main():
             objects = s3_client.list_objects(Bucket=config["bucket_name"], Prefix=f'{config["pl_folder"]}/{year}{month}/{config["pl_folder"]}')
             for obj in objects["Contents"]:
                 object_key = obj["Key"]
-                if any(f'_{param}.' in object_key for param in config["pl_params"]):
+                if any(f'_{param}.' in object_key for param in config["pl_params"]) and '010100' in object_key:
                     obj_path = f'{config["download_path"]}/{year}-{month}-{object_key.replace("/", "-").split(".")[7].split("_")[-1]}-{object_key.replace("/", "-").split(".")[9]}.nc'
                     if os.path.exists(obj_path):
                         print(f'{obj_path} already exists, skipping download')
@@ -54,7 +54,7 @@ def main():
             objects = s3_client.list_objects(Bucket=config["bucket_name"], Prefix=f'{config["sfc_folder"]}/{year}{month}/{config["sfc_folder"]}')
             for obj in objects["Contents"]:
                 object_key = obj["Key"]
-                if any(f'_{param}.' in object_key for param in config["sfc_params"]):
+                if any(f'_{param}.' in object_key for param in config["sfc_params"]) and '010100' in object_key:
                     obj_path = f'{config["download_path"]}/{year}-{month}-{object_key.replace("/", "-").split(".")[7].split("_")[-1]}-{object_key.replace("/", "-").split(".")[9]}.nc'
                     if os.path.exists(obj_path):
                         print(f'{obj_path} already exists, skipping download')

@@ -29,7 +29,9 @@ $ ls -al requirements.txt
 
 $ pip install -r requirements.txt
 
-$ mkdir /lustre-home/gpu/home/users/nithiwat-r/fourcastnet/era5_data_test
+$ mkdir -p /lustre-home/gpu/home/users/nithiwat-r/fourcastnet/era5_data_test/era5_data
+
+$ mkdir -p /lustre-home/gpu/home/users/nithiwat-r/fourcastnet/era5_data_test/data_processed
 
 $ vi download.yaml.org
 
@@ -43,17 +45,29 @@ $ python download.py, see data file in download_path.
 
 $ python format.py, see data file in write_path.
 
+$ cd ..
+
 $ mkdir -p data/train data/test data/stats
 
-$ mv h5 file from write_path to data/train and data/test.
+$ mv era5_data_test/data_processed/2010.h5 data/train/
+
+$ mv era5_data_test/data_processed/2011.h5 data/test/
+
+$ cd fourcastnet
+
+$ vi mean.py.org
 
 $ vi mean.py, change path = "/mnt/fcn/data/train" and np.save path to data/stats.
 
 $ python mean.py
 
+$ vi std.py.org
+
 $ vi std.py, change path = "/mnt/fcn/data/train" and np.save path to data/stats.
 
 $ python std.py
+
+$ h5dump -H -A 0 2010.h5
 
 #=========================================================================
 
