@@ -17,13 +17,21 @@ $ cd fourcastnet
 
 $ module load Anaconda3/2024.10_gcc-11.5.0
 
-$ python -m venv venv
+$ source activate
 
-$ source venv/bin/activate
+$ conda env remove --name env_xxxx
+
+$ conda create -n env_era5-download python=3.11
+
+$ conda activate env_era5-download
+
+$ ls -al requirements.txt
 
 $ pip install -r requirements.txt
 
-$ vi config.yaml, change download_path, and your parameter.
+$ mkdir /lustre-home/gpu/home/users/nithiwat-r/fourcastnet/era5_data_test
+
+$ vi config.yaml, change download_path, write_path and your parameter.
 
 $ python download.py, see data file in download_path.
 
