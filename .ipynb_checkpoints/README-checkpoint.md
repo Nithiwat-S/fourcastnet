@@ -9,12 +9,14 @@ Downloading NSF NCAR Curated ECMWF Reanalysis 5 (ERA5) data via the Registry of 
 
 #=========================================================================
 ##get code
+
 $ git clone https://github.com/Nithiwat-S/fourcastnet.git
 
 $ cd fourcastnet
 
 #=========================================================================
 ##get data
+
 $ module load Anaconda3/2024.10_gcc-11.5.0
 
 $ source activate
@@ -77,6 +79,7 @@ $ goto h5 file on jupyterlab
 
 #=========================================================================
 ##create container and run.
+
 $ module load apptainer/1.3.6_gcc-11.5.0
 
 $ singularity --version
