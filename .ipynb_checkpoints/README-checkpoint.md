@@ -99,11 +99,9 @@ lr (learning rate): from 0.0005 to 0.000005
 
 $ vi run_fcn_afno_1gpu1A100.sh, edit work directory
 
+$ sbatch run_fcn_afno_1gpu1A100.sh
 
-
-#
-
-Outputs pytorch file (.pt) will be in the checkpoints/ folder.
+$$Outputs pytorch file (.pt) will be in the checkpoints/ folder.
 
 $ ls -alh checkpoints/
 
