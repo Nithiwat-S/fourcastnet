@@ -8,13 +8,13 @@ Downloading NSF NCAR Curated ECMWF Reanalysis 5 (ERA5) data via the Registry of 
 ## Process below.
 
 #=========================================================================
-
+##get code
 $ git clone https://github.com/Nithiwat-S/fourcastnet.git
 
 $ cd fourcastnet
 
 #=========================================================================
-
+##get data
 $ module load Anaconda3/2024.10_gcc-11.5.0
 
 $ source activate
@@ -69,51 +69,34 @@ $ python std.py
 
 $ h5dump -H -A 0 2010.h5
 
-$ h5ls -v 2010.h5/params
+$ h5ls -v 2010.h5/params and see Dataset {2/2}
 
-$ h5ls -d 2010.h5/params
+$ h5ls -d 2010.h5/params | more
+
+$ goto h5 file on jupyterlab
 
 #=========================================================================
+##create container and run.
+$ module load apptainer/1.3.6_gcc-11.5.0
 
 $ singularity --version
 
-$ singularity build --fakeroot --fix-perms nvidia-modulus24-12.sif nvidia-modulus24.12.def
+$ vi nvidia-physicsnemo-25-03.def
 
-$ singularity exec --nv nvidia-modulus24-12.sif nvidia-smi
+$ singularity build nvidia-physicsnemo-25-03.sif nvidia-physicsnemo-25-03.def
 
-## source from https://github.com/NVIDIA/modulus.git
-
-$ cd fcn_afno
-
-$ vi conf/config.yaml, change
-
-channels: from [0, 1, …, 19] to [0, 1, …, 33]
-
-(test-data)channels: from [0, 1, …, 19] to [0, 1, …, 12]
-
+$ vi physicsnemo/examples/weather/fcn_afno/conf/config.yaml, change
+channels: from [0, 1, …, 19] to [0, 1] ;from Dataset
 max_epoch: from 80 to 10
-
 num_workers_train: from 8 to 1
-
 num_workers_valida: from 8 to 1
 
-#
-
-$ vim train_era5.py, change
-
+$ vi physicsnemo/examples/weather/fcn_afno/train_era5.py, change
 lr (learning rate): from 0.0005 to 0.000005
 
-#
+$ vi run_fcn_afno_1gpu1A100.sh, edit work directory
 
-$ singularity shell --nv ../nvidia-modulus24-12.sif
 
-Singularity> nvidia-smi
-
-Singularity> exit
-
-#
-
-$ singularity exec --nv --bind ../data:/data ../nvidia-modulus24-12.sif mpirun --allow-run-as-root -np 2 python train_era5.py
 
 #
 
