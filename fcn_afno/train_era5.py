@@ -174,7 +174,7 @@ def main(cfg: DictConfig) -> None:
 
     # Initialize optimizer and scheduler
     optimizer = optimizers.FusedAdam(
-        fcn_model.parameters(), betas=(0.9, 0.999), lr=0.0005, weight_decay=0.0
+        fcn_model.parameters(), betas=(0.9, 0.999), lr=0.000005, weight_decay=0.0
     )
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=150)
 
