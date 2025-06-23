@@ -31,6 +31,12 @@ $ pip install -r requirements.txt
 
 $ mkdir /lustre-home/gpu/home/users/nithiwat-r/fourcastnet/era5_data_test
 
+$ vi download.yaml.org
+
+$ vi download.yaml, change months = ['01']
+
+$ vi config.yaml.org
+
 $ vi config.yaml, change download_path, write_path and your parameter.
 
 $ python download.py, see data file in download_path.

@@ -20,7 +20,7 @@ def main():
 
     all_years = train_years + test_years + out_of_sample_years
 
-    months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+    months = ['01']
 
     # Initialize s3 client
     #print("Initializing s3 client...")
