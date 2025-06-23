@@ -86,7 +86,7 @@ $ singularity --version
 
 $ vi nvidia-physicsnemo-25-03.def
 
-$ singularity build nvidia-physicsnemo-25-03.sif nvidia-physicsnemo-25-03.def
+$ singularity build ../nvidia-physicsnemo-25-03.sif nvidia-physicsnemo-25-03.def
 
 $ vi physicsnemo/examples/weather/fcn_afno/conf/config.yaml, change
 
