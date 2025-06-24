@@ -39,13 +39,13 @@ $ mkdir -p ../aws_era5_data/era5_data
 
 $ mkdir -p ../aws_era5_data/data_processed
 
-$ vi download.yaml.org
+$ more download.yaml.org
 
-$ vi download.yaml, change months = ['01']
+$ more download.yaml, change months = ['01']
 
-$ vi config.yaml.org
+$ more config.yaml.org
 
-$ vi config.yaml, change download_path, write_path and your parameter.
+$ more config.yaml, change download_path, write_path and your parameter.
 
 $ python download.py, see data file in download_path.
 
@@ -57,15 +57,11 @@ $ mv ../aws_era5_data/data_processed/2010.h5 ../data/train/
 
 $ mv ../aws_era5_data/data_processed/2011.h5 ../data/test/
 
-$ vi mean.py.org
-
-$ vi mean.py, change path = "/mnt/fcn/data/train" and np.save path to ../data/stats.
+$ more mean.py, change path = "/mnt/fcn/data/train" and np.save path to ../data/stats.
 
 $ python mean.py
 
-$ vi std.py.org
-
-$ vi std.py, change path = "/mnt/fcn/data/train" and np.save path to ../data/stats.
+$ more std.py, change path = "/mnt/fcn/data/train" and np.save path to ../data/stats.
 
 $ python std.py
 
@@ -80,7 +76,7 @@ $ open h5 file on jupyterlab
 #=========================================================================
 ##config model (from https://github.com/NVIDIA/physicsnemo/tree/main/examples/weather/fcn_afno)
 
-$ vi fourcastnet/fcn_afno/conf/config.yaml, change
+$ more fourcastnet/fcn_afno/conf/config.yaml, change
 
 channels: from [0, 1, …, 19] to [0, 1] ;from Dataset
 
@@ -90,7 +86,7 @@ num_workers_train: from 8 to 1
 
 num_workers_valida: from 8 to 1
 
-$ vi fourcastnet/fcn_afno/train_era5.py, change
+$ more fourcastnet/fcn_afno/train_era5.py, change
 
 lr (learning rate): from 0.0005 to 0.000005
 
@@ -103,11 +99,11 @@ $ apptainer --version
 
 $ cd fourcastnet/run
 
-$ vi nvidia-physicsnemo-25-03.def
+$ more nvidia-physicsnemo-25-03.def
 
 $ apptainer build nvidia-physicsnemo-25-03.sif nvidia-physicsnemo-25-03.def
 
-$ vi run_fcn_afno_1gpu1A100.sh, edit work directory
+$ more run_fcn_afno_1gpu1A100.sh, edit work directory
 
 $ sbatch run_fcn_afno_1gpu1A100.sh
 
@@ -125,18 +121,3 @@ rerun, delete all file in outputs directory.
 $ rm -rf outputs/*
 
 $ sbatch run_fcn_afno_1gpu1A100.sh
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
