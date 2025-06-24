@@ -1,0 +1,10 @@
+/aws-era5
+/aws_era5_data_test
+/data
+/run/nvidia-modulus-24-12.sif
+/run/nvidia-physicsnemo-25-03.sif
+/fcn_afno/checkpoints
+/fcn_afno/outputs
+/fcn_afno-24/checkpoints
+/fcn_afno-24/outputs
+
