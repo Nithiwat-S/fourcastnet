@@ -30,7 +30,7 @@ def main():
     h5params = generate_params_list(config)
 
     #path = "/mnt/fcn/data/train"
-    path = "/lustre-home/gpu/home/research/nithiwat-r/fourcastnet/data/train"
+    path = "../data/train"
 
     files = os.listdir(path)
     # print("files: ", files)
@@ -67,7 +67,7 @@ def main():
     print(f'stds ({np.shape(stds)}): {stds}')
     np.save(
         #"/mnt/fcn/data/stats/global_stds.npy", stds.reshape(1, -1, 1, 1)
-        "/lustre-home/gpu/home/research/nithiwat-r/fourcastnet/data/stats/global_stds.npy", stds.reshape(1, -1, 1, 1)
+        "../data/stats/global_stds.npy", stds.reshape(1, -1, 1, 1)
     )
 
 if __name__ == "__main__":

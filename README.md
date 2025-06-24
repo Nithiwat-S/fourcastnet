@@ -51,15 +51,11 @@ $ python download.py, see data file in download_path.
 
 $ python format.py, see data file in write_path.
 
-$ cd ..
+$ mkdir -p ../data/train ../data/test ../data/stats
 
-$ mkdir -p data/train data/test data/stats
+$ mv ../aws_era5_data/data_processed/2010.h5 ../data/train/
 
-$ mv era5_data_test/data_processed/2010.h5 data/train/
-
-$ mv era5_data_test/data_processed/2011.h5 data/test/
-
-$ cd fourcastnet
+$ mv ../aws_era5_data/data_processed/2011.h5 ../data/test/
 
 $ vi mean.py.org
 

@@ -30,7 +30,7 @@ def main():
     h5params = generate_params_list(config)
 
     #path = "/mnt/fcn/data/train"
-    path = "/lustre-home/gpu/home/research/nithiwat-r/fourcastnet/data/train"
+    path = "../data/train"
 
     files = os.listdir(path)
 
@@ -62,7 +62,7 @@ def main():
         print(f'params_means ({np.shape(params_means)}): {params_means}')
         np.save(
             #"/mnt/fcn/data/stats/global_means.npy", params_means.reshape(1, -1, 1, 1)
-            "/lustre-home/gpu/home/research/nithiwat-r/fourcastnet/data/stats/global_means.npy", params_means.reshape(1, -1, 1, 1)
+            "../data/stats/global_means.npy", params_means.reshape(1, -1, 1, 1)
         )
 
         print(f'{h5params[i]} mean: {params_means[i]}')
