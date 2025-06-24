@@ -59,23 +59,21 @@ $ mv ../aws_era5_data/data_processed/2011.h5 ../data/test/
 
 $ vi mean.py.org
 
-$ vi mean.py, change path = "/mnt/fcn/data/train" and np.save path to data/stats.
+$ vi mean.py, change path = "/mnt/fcn/data/train" and np.save path to ../data/stats.
 
 $ python mean.py
 
 $ vi std.py.org
 
-$ vi std.py, change path = "/mnt/fcn/data/train" and np.save path to data/stats.
+$ vi std.py, change path = "/mnt/fcn/data/train" and np.save path to ../data/stats.
 
 $ python std.py
 
-$ h5dump -H -A 0 2010.h5
+$ h5dump -H -A 0 ../data/train/2010.h5
 
-$ h5ls -v 2010.h5/params and see Dataset {2/2}
+$ h5ls -v ../data/train/2010.h5/params and see Dataset {2/2}
 
-$ h5ls -d 2010.h5/params | more
-
-$ goto h5 file on jupyterlab
+$ open h5 file on jupyterlab
 
 #=========================================================================
 ##create container and run.
