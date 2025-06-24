@@ -8,14 +8,14 @@ Downloading NSF NCAR Curated ECMWF Reanalysis 5 (ERA5) data via the Registry of 
 ## Process below.
 
 #=========================================================================
-##get code
+##get code.
 
 $ git clone https://github.com/Nithiwat-S/fourcastnet.git
 
 $ cd fourcastnet
 
 #=========================================================================
-##get data
+##get data.
 
 $ module load Anaconda3/2024.10_gcc-11.5.0
 
@@ -69,6 +69,8 @@ $ vi std.py, change path = "/mnt/fcn/data/train" and np.save path to ../data/sta
 
 $ python std.py
 
+$ ls -la ../data/*/
+
 $ h5dump -H -A 0 ../data/train/2010.h5
 
 $ h5ls -v ../data/train/2010.h5/params and see Dataset {2/2}
@@ -76,17 +78,9 @@ $ h5ls -v ../data/train/2010.h5/params and see Dataset {2/2}
 $ open h5 file on jupyterlab
 
 #=========================================================================
-##create container and run.
+##config model (from https://github.com/NVIDIA/physicsnemo/tree/main/examples/weather/fcn_afno)
 
-$ module load apptainer/1.3.6_gcc-11.5.0
-
-$ singularity --version
-
-$ vi nvidia-physicsnemo-25-03.def
-
-$ singularity build ../nvidia-physicsnemo-25-03.sif nvidia-physicsnemo-25-03.def
-
-$ vi physicsnemo/examples/weather/fcn_afno/conf/config.yaml, change
+$ vi fourcastnet/fcn_afno/conf/config.yaml, change
 
 channels: from [0, 1, …, 19] to [0, 1] ;from Dataset
 
@@ -96,21 +90,41 @@ num_workers_train: from 8 to 1
 
 num_workers_valida: from 8 to 1
 
-$ vi physicsnemo/examples/weather/fcn_afno/train_era5.py, change
+$ vi fourcastnet/fcn_afno/train_era5.py, change
 
 lr (learning rate): from 0.0005 to 0.000005
+
+#=========================================================================
+##create container and run.
+
+$ module load apptainer/1.3.6_gcc-11.5.0
+
+$ apptainer --version
+
+$ cd fourcastnet/run
+
+$ vi nvidia-physicsnemo-25-03.def
+
+$ apptainer build nvidia-physicsnemo-25-03.sif nvidia-physicsnemo-25-03.def
 
 $ vi run_fcn_afno_1gpu1A100.sh, edit work directory
 
 $ sbatch run_fcn_afno_1gpu1A100.sh
 
-$$Outputs pytorch file (.pt) will be in the checkpoints/ folder.
+$ squeue
 
-$ ls -alh checkpoints/
+$ cat fcn_afno-*.out
+
+#=========================================================================
+##model output. Outputs pytorch file (.pt) will be in the checkpoints/ folder.
+
+$ ls -alh ../fcn_afno/checkpoints
 
 rerun, delete all file in outputs directory.
 
 $ rm -rf outputs/*
+
+$ sbatch run_fcn_afno_1gpu1A100.sh
 
 
 
