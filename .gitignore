@@ -3,6 +3,7 @@
 /data
 /run/nvidia-modulus-24-12.sif
 /run/nvidia-physicsnemo-25-03.sif
+/run/fcn_afno*
 /fcn_afno/checkpoints
 /fcn_afno/outputs
 /fcn_afno-24/checkpoints
