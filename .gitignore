@@ -1,8 +1,8 @@
-/aws_era5_data_test/data_processed/2012.h5
-/aws_era5_data_test/era5_data/2010-01-10u-2010010100_2010013123.nc
-/aws_era5_data_test/era5_data/2010-01-t-2010010100_2010010123.nc
-/aws_era5_data_test/era5_data/2011-01-10u-2011010100_2011013123.nc
-/aws_era5_data_test/era5_data/2011-01-t-2011010100_2011010123.nc
+/aws_era5_data/data_processed/2012.h5
+/aws_era5_data/era5_data/2010-01-10u-2010010100_2010013123.nc
+/aws_era5_data/era5_data/2010-01-t-2010010100_2010010123.nc
+/aws_era5_data/era5_data/2011-01-10u-2011010100_2011013123.nc
+/aws_era5_data/era5_data/2011-01-t-2011010100_2011010123.nc
 /data/stats/global_means.npy
 /data/stats/global_stds.npy
 /data/train/2010.h5
