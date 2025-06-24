@@ -21,19 +21,23 @@ $ module load Anaconda3/2024.10_gcc-11.5.0
 
 $ source activate
 
+$ conda env list
+
 $ conda env remove --name env_xxxx
 
 $ conda create -n env_era5-download python=3.11
 
 $ conda activate env_era5-download
 
+$ cd aws-era5-download-script
+
 $ ls -al requirements.txt
 
 $ pip install -r requirements.txt
 
-$ mkdir -p /lustre-home/gpu/home/users/nithiwat-r/fourcastnet/era5_data_test/era5_data
+$ mkdir -p ../aws_era5_data/era5_data
 
-$ mkdir -p /lustre-home/gpu/home/users/nithiwat-r/fourcastnet/era5_data_test/data_processed
+$ mkdir -p ../aws_era5_data/data_processed
 
 $ vi download.yaml.org
 

@@ -1,5 +1,5 @@
-download_path: "/lustre-home/gpu/home/research/nithiwat-r/fourcastnet/era5_data_test/era5_data"
-write_path: "/lustre-home/gpu/home/research/nithiwat-r/fourcastnet/era5_data_test/data_processed"
+download_path: "../aws_era5_data/era5_data"
+write_path: "../aws_era5_data/data_processed"
 bucket_name: "nsf-ncar-era5"
 start_train_year: 2010
 end_train_year: 2010
