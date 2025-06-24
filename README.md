@@ -103,6 +103,8 @@ $ more nvidia-physicsnemo-25-03.def
 
 $ apptainer build nvidia-physicsnemo-25-03.sif nvidia-physicsnemo-25-03.def
 
+$ ls -alh
+
 $ more run_fcn_afno_1gpu1A100.sh, edit work directory
 
 $ sbatch run_fcn_afno_1gpu1A100.sh
