@@ -15,13 +15,13 @@ module purge
 module load apptainer/1.3.6_gcc-11.5.0
 apptainer=$(which apptainer)
 
-cd /lustre-home/gpu/home/research/nithiwat-r/fourcastnet/fourcastnet
+cd $HOME/fourcastnet
 rm -rf fcn_afno/outputs
 rm -rf fcn_afno/checkpoints
 
 # Run with Apptainer and bind needed paths
 srun $apptainer exec --nv \
   --bind $PWD/fcn_afno:/workspace \
-  --bind /lustre-home/gpu/home/research/nithiwat-r/fourcastnet/data:/data \
-  ../nvidia-physicsnemo-25-03.sif \
+  --bind $HOME/fourcastnet/data:/data \
+  $HOME/fourcastnet/run/nvidia-physicsnemo-25-03.sif \
   bash -c "cd /workspace && python train_era5.py"
