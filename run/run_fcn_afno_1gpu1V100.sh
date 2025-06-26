@@ -25,4 +25,3 @@ srun $apptainer exec --nv \
   --bind $HOME/fourcastnet/data:/data \
   $HOME/fourcastnet/run/nvidia-modulus-24-12.sif \
   bash -c "cd /workspace && python train_era5.py"
-

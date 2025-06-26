@@ -32,6 +32,9 @@ from modulus.launch.logging import LaunchLogger, PythonLogger
 from modulus.launch.logging.mlflow import initialize_mlflow
 from modulus.launch.utils import load_checkpoint, save_checkpoint
 
+import os
+print("[DEBUG] MLFLOW_TRACKING_URI =", os.getenv("MLFLOW_TRACKING_URI"))
+
 try:
     from apex import optimizers
 except:
@@ -107,7 +110,7 @@ def main(cfg: DictConfig) -> None:
     initialize_mlflow(
         experiment_name="Modulus-Launch-Dev",
         experiment_desc="Modulus launch development",
-        run_name="FCN-Training",
+        run_name="FCN-Training-3",
         run_desc="FCN ERA5 Training",
         user_name="Modulus User",
         mode="offline",
