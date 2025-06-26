@@ -105,9 +105,21 @@ $ apptainer build nvidia-physicsnemo-25-03.sif nvidia-physicsnemo-25-03.def
 
 $ ls -alh
 
-$ more run_fcn_afno_1gpu1A100.sh, edit work directory
+$$$run physicsnemo-25----------
 
-$ sbatch run_fcn_afno_1gpu1A100.sh
+    $ more run_fcn_afno_1gpu1A100.sh, edit work directory
+
+    $ sbatch run_fcn_afno_1gpu1A100.sh
+
+$$$run physicsnemo-24----------
+
+    $ rsync -av /lustre-home/gpu/home/research/nithiwat-r/fourcastnet/run/nvidia-modulus-24-12.sif .
+
+    $ ls -alh
+    
+    $ more run_fcn_afno_1gpu1V100.sh, edit work directory
+
+    $ sbatch run_fcn_afno_1gpu1V100.sh
 
 $ squeue
 
@@ -117,6 +129,8 @@ $ cat fcn_afno-*.out
 ##model output. Outputs pytorch file (.pt) will be in the checkpoints/ folder.
 
 $ ls -alh ../fcn_afno/checkpoints
+
+$ ls -alh ../fcn_afno-24/checkpoints
 
 rerun, delete all file in outputs directory.
 
