@@ -110,7 +110,7 @@ def main(cfg: DictConfig) -> None:
     initialize_mlflow(
         experiment_name="Nithiwat_Modulus-Launch-Dev",
         experiment_desc="Modulus launch development",
-        run_name="FCN-Training-3",
+        run_name="FCN-Training-Epoch-2",
         run_desc="FCN ERA5 Training",
         user_name="Modulus User",
         mode="online",
