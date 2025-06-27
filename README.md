@@ -111,7 +111,7 @@ $$$run physicsnemo-25----------
 
     $ sbatch run_fcn_afno_1gpu1A100.sh
 
-$$$run physicsnemo-24----------
+$$$run modulus-24----------
 
     $ rsync -av /lustre-home/gpu/home/research/nithiwat-r/fourcastnet/run/nvidia-modulus-24-12.sif .
 
