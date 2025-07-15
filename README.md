@@ -39,13 +39,13 @@ $ mkdir -p ../aws_era5_data/era5_data
 
 $ mkdir -p ../aws_era5_data/data_processed
 
-$ more download.yaml.org
+$ cat download.py.org
 
-$ more download.yaml, change months = ['01']
+$ cat download.py, change months = ['01']
 
-$ more config.yaml.org
+$ cat config.yaml.org
 
-$ more config.yaml, change download_path, write_path and your parameter.
+$ cat config.yaml, change download_path, write_path and your parameter.
 
 $ python download.py, see data file in download_path.
 
@@ -57,11 +57,11 @@ $ mv ../aws_era5_data/data_processed/2010.h5 ../data/train/
 
 $ mv ../aws_era5_data/data_processed/2011.h5 ../data/test/
 
-$ more mean.py, change path = "/mnt/fcn/data/train" and np.save path to ../data/stats.
+$ cat mean.py, change path = "/mnt/fcn/data/train" and np.save path to ../data/stats.
 
 $ python mean.py
 
-$ more std.py, change path = "/mnt/fcn/data/train" and np.save path to ../data/stats.
+$ cat std.py, change path = "/mnt/fcn/data/train" and np.save path to ../data/stats.
 
 $ python std.py
 
@@ -76,7 +76,7 @@ $ open h5 file on jupyterlab
 #=========================================================================
 ##config model (from https://github.com/NVIDIA/physicsnemo/tree/main/examples/weather/fcn_afno)
 
-$ more fourcastnet/fcn_afno/conf/config.yaml, change
+$ cat fourcastnet/fcn_afno/conf/config.yaml, change
 
 channels: from [0, 1, …, 19] to [0, 1] ;from Dataset
 
@@ -86,7 +86,7 @@ num_workers_train: from 8 to 1
 
 num_workers_valida: from 8 to 1
 
-$ more fourcastnet/fcn_afno/train_era5.py, change
+$ cat fourcastnet/fcn_afno/train_era5.py, change
 
 lr (learning rate): from 0.0005 to 0.000005
 
@@ -99,7 +99,7 @@ $ apptainer --version
 
 $ cd fourcastnet/run
 
-$ more nvidia-physicsnemo-25-03.def
+$ cat nvidia-physicsnemo-25-03.def
 
 $ apptainer build nvidia-physicsnemo-25-03.sif nvidia-physicsnemo-25-03.def
 
@@ -107,7 +107,7 @@ $ ls -alh
 
 $$$run physicsnemo-25----------
 
-    $ more run_fcn_afno_1gpu1A100.sh, edit work directory
+    $ cat run_fcn_afno_1gpu1A100.sh, edit work directory
 
     $ sbatch run_fcn_afno_1gpu1A100.sh
 
@@ -117,7 +117,7 @@ $$$run modulus-24----------
 
     $ ls -alh
     
-    $ more run_fcn_afno_1gpu1V100.sh, edit work directory
+    $ cat run_fcn_afno_1gpu1V100.sh, edit work directory
 
     $ sbatch run_fcn_afno_1gpu1V100.sh
 
