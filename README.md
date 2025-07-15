@@ -41,7 +41,7 @@ $ mkdir -p ../aws_era5_data/data_processed
 
 $ cat download.py.org
 
-$ cat download.py, change months = ['01']
+$ cat download.py  #change months = ['01']
 
 $ cat config.yaml.org
 
@@ -148,6 +148,8 @@ $ ls -alh ../fcn_afno-24/checkpoints  #for modulus
 
 rerun, delete all file in outputs directory.
 
-$ rm -rf outputs/*
+$ rm -rf ../fcn_afno/outputs/*
+
+$ rm -rf ../fcn_afno-24/outputs/*
 
 $ sbatch run_fcn_afno_1gpu1A100.sh
